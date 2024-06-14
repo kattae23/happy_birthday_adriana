@@ -7,6 +7,7 @@ export default {
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
+        gradient: 'gradient 5s ease infinite',
       },
       keyframes: {
         marquee: {
@@ -16,6 +17,17 @@ export default {
         "marquee-vertical": {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
+        gradient: {
+          "0%": {
+            "background-position": "0 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+          to: {
+            "background-position": "0 50%",
+          },
         },
         orbit: {
           "0%": {

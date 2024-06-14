@@ -7,11 +7,13 @@ export default function NumberTicker({
   direction = "up",
   delay = 0,
   className,
+  frame
 }: {
   value: number;
   direction?: "up" | "down";
   className?: string;
   delay?: number;
+  frame: () => void,
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : 0);
@@ -25,7 +27,7 @@ export default function NumberTicker({
     isInView &&
       setTimeout(() => {
         motionValue.set(direction === "down" ? 0 : value);
-      }, delay * 1000);
+        }, delay * 1000);
   }, [motionValue, isInView, delay, value, direction]);
 
   useEffect(
@@ -35,9 +37,12 @@ export default function NumberTicker({
           ref.current.textContent = Intl.NumberFormat("en-US").format(
             latest.toFixed(0),
           );
+          if(latest.toFixed(0) === '20'){
+            frame();
+          }
         }
       }),
-    [springValue],
+    [springValue, frame],
   );
 
   return (

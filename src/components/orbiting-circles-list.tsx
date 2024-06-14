@@ -19,15 +19,15 @@ export function OrbitingCirclesList() {
 
       {/* Inner Circles */}
       <OrbitingCircles
-        className="h-[30px] w-[30px] border-none bg-transparent"
+        className="h-[60px] w-[60px] border-none bg-transparent"
         duration={20}
         delay={20}
-        radius={80}
+        radius={190}
       >
         <img src="/adi-1.png" alt="" />
       </OrbitingCircles>
       <OrbitingCircles
-        className="h-[30px] w-[30px] border-none bg-transparent"
+        className="h-[40px] w-[40px] border-none bg-transparent"
         duration={20}
         delay={10}
         radius={290}
@@ -45,8 +45,8 @@ export function OrbitingCirclesList() {
         <img src="/adi-3.jpg" alt="" />
       </OrbitingCircles>
       <OrbitingCircles
-        className="h-[50px] w-[50px] border-none bg-transparent"
-        radius={190}
+        className="h-[70px] w-[70px] border-none bg-transparent"
+        radius={230}
         duration={20}
         delay={20}
         reverse

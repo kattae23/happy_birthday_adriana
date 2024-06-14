@@ -1,0 +1,22 @@
+networks:
+  default:
+    external: true
+    name: happy_birth_day_adriana
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: kattae/happy_birth_day_adriana
+    container_name: happy_birth_day_adriana
+    restart: always
+    ports:
+      - ${PORT}:${PORT}
+    env_file:
+      - .env.docker
+    expose:
+      - '8080'
+    networks:
+      - default
+

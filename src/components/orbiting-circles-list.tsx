@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 
 export function OrbitingCirclesList() {
   return (
-    <div className="relative flex h-[1000px] w-full items-center justify-center overflow-hidden bg-background">
+    <div className="relative flex bg-inherit h-[1000px] w-full items-center justify-center overflow-hidden z-10">
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b text-center text-8xl font-semibold leading-none  text-white">
       <Typewriter
             options={{
@@ -32,7 +32,7 @@ export function OrbitingCirclesList() {
         delay={10}
         radius={290}
       >
-        <img src="/adi-2.png" alt="" />
+        <img src="/adi-2.jpg" alt="" />
       </OrbitingCircles>
 
       {/* Outer Circles (reverse) */}

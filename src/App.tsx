@@ -1,4 +1,5 @@
 import wishes from '../wishes.json'
+import BentoList from './components/bento-list'
 import Card from './components/card'
 import MarqueeList from './components/marquee-list'
 import Wishsection from './components/wish-list'
@@ -21,23 +22,22 @@ function App() {
   ]
 
   return (
-    <>
+    <main className='bg-[#5d1f96] min-h-screen'>
       <Wishsection />
-
-      <div className="min-h-screen bg-[#5d1f96] ">
+      <div className="">
         <ul className='flex flex-col items-center justify-center pb-10'>
           {
             wishes.map(({ title, img, name, wish }, i) => {
               const { bgColor, textColor } = themes[(i % themes.length + themes.length) % themes.length]
               return (<Card title={title} name={name} bgColor={bgColor} img={img} textColor={textColor} >{wish}</Card>)
-            })
-          }
+              })
+              }
         </ul>
       </div>
 
       <MarqueeList />
-
-    </>
+      <BentoList />
+    </main>
   )
 }
 

@@ -58,7 +58,7 @@ COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
 
 # Expose the port
-EXPOSE 8080
+EXPOSE 5173
 
 # Start the server using the production build
-CMD [ "node", "dist/app.js" ]
+CMD [ "npm", "run", "dev" ]

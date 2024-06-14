@@ -13,10 +13,8 @@ services:
     restart: always
     ports:
       - ${PORT}:${PORT}
-    env_file:
-      - .env.docker
     expose:
-      - '8080'
+      - ${PORT}
     networks:
       - default
 
